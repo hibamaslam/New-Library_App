@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" >
+
+</head>
+<body>
+  
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+    
+                <a class="navbar-brand" href="<%=mainlink%>"><%=brand%></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <%for(i=0;i<navl.length;i++){%>
+                  <li class="nav-item ">
+                    <a class="nav-link disabled" href="<%=navl[i].link%>"> <%=navl[i].name%> <span class="sr-only">(current)</span></a>
+                  </li>
+                  <%}%>
+              </ul>
+                </div>
+            </div>
+              </nav>
+   
+  
+              <div class=" header">
+               
+             </div>
+             
+             <div class="container panel">
+                 <div class="col-md-10 ml-auto mr-auto text-center">
+
+<!-----------------------Sign up form-------------------->
+
+
+  <div class="row">
+
+      <div class="col-md-4 col-sm-4 col-sm-12 ml-auto mr-auto">
+          <div class="form-row">
+              <form name="form1" action="<%=llink%>" onsubmit="return validate()" id="frmouter">
+                  <h1 class="text-center">Sign Up</h1>
+                    <hr>
+                  <div class="form-group">
+                      <label for='user_first_name'>Name</label><br>
+                      <input type="text" class="form-control" placeholder="Name*" autofocus="autofocus" id="user_first_name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for='user_email'>Email Id</label>
+                      <input type="email" class="form-control" placeholder="email ID*" id="user_email" required>
+                  </div>
+                  <div class="form-group">
+                      <label for='user_password'>Password</label>
+                      <input type="password" class="form-control"  placeholder="password*" id="user_password" required>
+                  </div>
+                  <div class="form-group">
+                      <label for='confirm_password'>Confirm Password</label>
+                      <input type="password" class="form-control"  placeholder="Retype password*" id="conf_user_password" required>
+                  </div> <br>
+                  <div class='submit'>
+                      <input class="btn btn-block" type='submit' id="submit" value='New user'>
+                      <span>
+  Already a member?
+  <a href="<%=llink%>">Log in</a><br>
+
+  </span>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+               </div>
+             </div>
+
+             <footer class=" footer text-center m-auto">
+                <h3>Submitted by Hiba Mohammed Aslam</h3> 
+                 <p class="mb-auto">Library "THE LIB" &copy ICT Academy of KERALA</p>
+                 <p class="mb-auto">FSD 2020</p>
+            </footer>
+                  
+            <script src="./js/signup.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

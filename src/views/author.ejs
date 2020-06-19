@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/author.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" >
+
+</head>
+<body>
+  
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+    
+                <a class="navbar-brand" href="#">THE LIB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <%for(i=0;i<nav.length;i++){%>
+                  <li class="nav-item">
+                    <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].name%></a>
+                  </li>
+                  <%}%>
+                 </ul>
+               </div>
+            </div>
+        </nav>
+   
+              <div class=" header">
+                <h1 class="text-white text-center mt-auto pt-5" style="font-size:100px;">Author</h1>
+             </div>
+             
+<div class="container panel">
+
+<div class="row mx-auto">
+
+    <div class="col-md-6 mx-auto text-center " style="height:300px;">
+      <div class="card-deck ">
+      <div class="card rounded mx-auto d-block">
+        <img class="card-img-top img-thumbnail align-center" src="/images/<%=author.img%>" alt="Card image cap">
+        <!-- <div class="card-body" style="height:150px;padding:10px;"> -->
+          <h5 class="card-title"><%=author.name%></h5>
+        <!-- </div> -->
+      </div>
+      </div>
+ </div>
+</div>
+
+<div class="row pt-5" >
+  <div class="card" style="width:100%;">
+  <div class="card-body">
+    <h4 class="card-title text-center">BORN:</h4>
+          <h5 class="text-center"><%=author.born%></h5>
+    <h4 class="card-title text-center">GENRE:</h4>
+          <h5 class="text-center"><%=author.genre%></h5>
+    <h4 class="card-title text-center">BOOKS WRITTEN:</h4>
+          <h5 class="text-center"><%=author.books%></h5>
+    <h4 class="card-title text-center">WEBLINK:</h4>
+         <h5 class="text-center"><a href="<%=author.weblink%>" class="card-link "><%=author.weblink%></a></h5>
+  </div>
+</div>
+ 
+</div>
+<!-- <div class="row">
+    
+    <div class="col-md-6 mx-auto text-center" style="height:200px;">
+      <div class="card-deck ">
+        <div class="card-body rounded mx-auto d-block">
+          <h5 class="card-title"><%=author.name%></h5>
+          <h5 class="card-text"><%=author.born%></h5>
+          <p class="card-text"<%=author.genre%></p>
+          <p class="card-text"><%=author.books%></p>
+          <p class="card-text"><%=author.weblink%></p>
+    </div>
+</div>
+      </div>
+</div> -->
+
+  </div>   
+             <!--Footer-->
+           <footer class=" footer text-center m-auto">
+              <h3>Submitted by Hiba Mohammed Aslam</h3> 
+               <p class="mb-auto">Library "THE LIB" &copy ICT Academy of KERALA</p>
+               <p class="mb-auto">FSD 2020</p>
+           </footer>
+  
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
