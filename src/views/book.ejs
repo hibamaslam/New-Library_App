@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
+    <link rel="icon" href="/images/The Lib.jpg" type="image/icon type">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/book.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,16 +35,27 @@
               </nav>
    
               <div class=" header">
-                <h1 class="text-white text-center mt-auto pt-5" style="font-size:100px;">Book</h1>
+                <h1 class="text-white text-center mt-auto pt-5" style="font-size:100px;"><%=book.title%></h1>
              </div>
             
    <div class="container panel">
     <div class="col-md-10 m-auto text-center">
 
+      <div class="admin_links" style="display: inline-flex;">             
+        <form action="/books/editBooks/<%=book._id%>" method="GET">
+            <button class="btn btn-info btn-xs ml-auto mr-auto" type="submit" name="btn"><i class="fa fa-edit"></i></button>
+        </form>
+        <form action="/books/deleteBooks/<%=book._id%>" method="GET">
+            <button class="btn btn-danger btn-xs ml-2 mr-2" type="submit" name="btn"><i class="fa fa-trash"></i></button>
+        </form>
+        </div> 
+
+
                  <div class="container-fluid mx-auto">
                     <div class="card-img-top text-black">
-                      <img class="img-thumbnail mx-auto" src="/images/<%=book.img%>" alt="Card image" style="height:350px;width:300px;">                     
+                      <img class="img-thumbnail mx-auto" src="/images/<%=book.image%>" alt="Card image" style="height:350px;width:300px;">                     
                     </div>
+
                     <div class="card-body">
                           <ul class="list-unstyled ">
     
@@ -53,9 +66,10 @@
                             <li><h5 class="text-center"><b>AUTHOR</b> :<%=book.author%></h5></li>
     
                             <li><h5 class="text-center"><b>RATINGS</b> :<%=book.ratings%></h5></li>
-    <h4 class="card-title text-center">DESCRIPTION:</h4>
-                            <li><h5 class="text-center"><%=book.Description%></h5></li>
+                              <h4 class="card-title text-center">DESCRIPTION:</h4>
+                            <li><h5 class="text-center"><%=book.description%></h5></li>
                           </ul> 
+
                         </div> 
                         
                         <!-- </div> -->

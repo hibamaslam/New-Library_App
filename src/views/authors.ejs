@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
+    <link rel="icon" href="/images/The Lib.jpg" type="image/icon type">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/authors.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,28 +41,18 @@
    <div class="container panel">
     <div class="col-md-10 mx-auto text-center" style="height:200px;">
       <div class="card-deck">
-    <%for(i=0;i<3;i++){%>
+    <%for(i=0;i<authors.length;i++){%>
       <div class="card rounded mx-auto d-block">
-        <img class="card-img-top img-thumbnail align-center" src="/images/<%=authors[i].img%>" alt="Card image cap">
+        <img class="card-img-top img-thumbnail align-center" src="/images/<%=authors[i].image%>" alt="Card image cap">
         <!-- <div class="card-body" style="height:150px;padding:10px;"> -->
           <h5 class="card-title"><%=authors[i].name%></h5>
-          <a href="/authors/<%=i%>"class="card-link">About</a>
+          <a href="/authors/<%=authors[i]._id%>"><small class="text-muted">About</small></a>
 
         <!-- </div> -->
       </div>
     <%}%>
       </div>
-      <div class="card-deck">
-        <%for(i=3;i<authors.length;i++){%>
-              <div class="card rounded mx-auto d-block">
-                <img class="card-img-top img-thumbnail align-center" src="/images/<%=authors[i].img%>" alt="Card image cap">
-                <div class="card-body" style="height:150px;padding:5px;">
-                  <h5 class="card-title"><%=authors[i].name%></h5>
-                  <a href="/authors/<%=i%>"class="card-link">About</a>
-                </div>
-              </div>
-            <%}%>
-              </div>
+      
                  
                </div>
              </div>

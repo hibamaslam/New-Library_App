@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
+    <link rel="icon" href="/images/The Lib.jpg" type="image/icon type">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -45,25 +47,25 @@
 
 <div class="row">
 
-  <div class="col-md-4 col-sm-4 col-sm-12 ml-auto mr-auto">
+  <div class="col-lg-6 col-md-6 col-sm-12 ml-auto mr-auto">
     <div class="form-row">
           <form action="<%=hlink%>" id="frmouter" onsubmit="return validate()">
               <h1 class="text-center">Log In</h1>
               <hr>
               <div class="form">
-                  <label for="InputEmail">Email ID</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required><br>
+                  <label for="InputUserName">User Name</label>
+                  <input type="text" class="form-control" id="username" name="InputUserName" required><br>
               </div>
               <div class="form">
                   <label for="InputPassword">Password</label>
-                  <input type="password" class="form-control" id="password" required>
+                  <input type="password" class="form-control" id="password" name="InputPassword" required>
               </div><br><br>
           
               <div class="form form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Remember me</label>
               </div>
-              <button class="btn btn-block" id="submit">Submit</button>
+              <button class="btn btn-block" type="submit" id="submit">Submit</button>
               <a href="#">forgot password??</a>
               <a href="<%=slink%>">Create new account</a>
           </form>
@@ -83,7 +85,7 @@
             </footer>
                   
                       <!-- </div> -->
-                      <script src="./js/login.js"></script>
+                      <script src="/js/login.js"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
+    <link rel="icon" href="/images/The Lib.jpg" type="image/icon type">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -47,20 +49,20 @@
 
       <div class="col-md-4 col-sm-4 col-sm-12 ml-auto mr-auto">
           <div class="form-row">
-              <form name="form1" action="<%=llink%>" onsubmit="return validate()" id="frmouter">
+              <form name="form1" method="POST" action="/signup/add" onsubmit="return validate()" id="frmouter">
                   <h1 class="text-center">Sign Up</h1>
                     <hr>
                   <div class="form-group">
-                      <label for='user_first_name'>Name</label><br>
-                      <input type="text" class="form-control" placeholder="Name*" autofocus="autofocus" id="user_first_name" required>
+                      <label for='user_name'>UserName</label><br>
+                      <input type="text" name='user_name' placeholder="User Name*" autofocus="autofocus" id="user_name" required>
                   </div>
                   <div class="form-group">
                       <label for='user_email'>Email Id</label>
-                      <input type="email" class="form-control" placeholder="email ID*" id="user_email" required>
+                      <input type="email" name='user_email' placeholder="email ID*" id="user_email" required>
                   </div>
                   <div class="form-group">
                       <label for='user_password'>Password</label>
-                      <input type="password" class="form-control"  placeholder="password*" id="user_password" required>
+                      <input type="password" name='user_password'  placeholder="password*" id="user_password" required>
                   </div>
                   <div class="form-group">
                       <label for='confirm_password'>Confirm Password</label>
@@ -89,7 +91,7 @@
                  <p class="mb-auto">FSD 2020</p>
             </footer>
                   
-            <script src="./js/signup.js"></script>
+            <script src="/js/signup.js"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
