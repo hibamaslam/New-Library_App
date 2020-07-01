@@ -15,7 +15,7 @@ booksRouter.get('/',function(req,res){
             {
                 nav,                        //use the nav ,passed as an argument, defined in app.js.
                 title:'Books',
-                books                       //sending values of books thru books array already created
+                books                  //sending values of books thru books array already created
             });
         })
    
@@ -54,17 +54,6 @@ booksRouter.get('/editBooks/:id',function(req,res){
 });
 
 
-// booksRouter.post('/editBooks',(req,res)=>
-// bookData.findById(req.body.id,(err,data)=>{
-//         if (err){throw err;}
-//         else{
-//            res.render("editBooks",{
-//            nav,
-//            title:"Edit",
-//            data});
-//     }
-// })
-// );
 // --------------Edit Book ---------------------//
 
 
@@ -85,36 +74,8 @@ booksRouter.post('/editBook',function(req,res){
 });
 
 
-
-// booksRouter.post("/editBook",function(req,res){
-//     bookData.findByIdAndUpdate(req.body.id,{$set:req.body},(err,data)=>{
-//         if(err){
-//             res.json({"status":"Failed"});
-//         }
-//         else if(data.n==0){
-//             res.json({"status":"No book matched"});
-//         }
-//         else{
-//             bookData.find().then(function(data){
-//                 res.redirect("/books");
-//             })
-//         }
-//     })
-// });
-
-
-
-
 // --------------Delete Book ---------------------//
 
-// booksRouter.post('/deleteBooks',function(req,res){
-//     const id = req.body.id; 
-//     bookData.findByIdAndDelete({_id:id})
-// .then(function(err,data){
-//         if(err)throw err;
-//         res.redirect('/books');
-//     })
-// });
 
 booksRouter.get('/deleteBooks/:id',function(req,res){
     var id=req.params.id;
@@ -124,10 +85,6 @@ booksRouter.get('/deleteBooks/:id',function(req,res){
         res.redirect('/books');
     });
 });
-
-
-
-
 
 return booksRouter;
 }

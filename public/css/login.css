@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color:burlywood;
+    background:url('../images/library-1.jpg');
 }
 
 /*---------------------NAVBAR----------------------------------*/
@@ -87,7 +87,7 @@ letter-spacing: 2px;
     padding: 30px 30px;
     margin-top: 50px;
     padding-top: 20px;
-    background: rgba(2, 2, 2, 0.5);
+    background: rgba(2, 2, 2,0.7);
     text-align:left;
 }
 

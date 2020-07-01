@@ -52,25 +52,8 @@ Authordata.updateOne(condition,req.body)
 
 });
 
-   // ----Delete Authors -------//
-
-adminauthorRouter.delete('/:i/delete',function(req,res){
-    const i = req.params.i; 
-    Authordata.delete({_id:i})
-    .then(function(author){
-        res.render('author',
-        {
-            nav,
-            title:'Author',
-            book
-        });
-
-        author.save();
-        res.redirect('/authors');
-    })
-});
 return adminauthorRouter
- //-------------Author----------------------------------
+
 }
 module.exports = router; 
     

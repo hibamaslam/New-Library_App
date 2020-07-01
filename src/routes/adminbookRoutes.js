@@ -37,33 +37,22 @@ function router(nav)
 //-------------------------Display Book to edit-----------------------//
 
 
-adminbookRouter.post('/editBooks/:id',(req,res)=>
-Bookdata.findByIdAndUpdate( 
-    req.body.id,{$set:req.body},(err,data)=>{
-        if (err){res.json({"status":"Failed"});}
-        else if (data.n==0){
-            console.log(data);
-            res.json({"status":"No matches found"});
-        }
-        else
-        Bookdata.find()
-        .then((data)=>
-        {res.redirect('/books');}
-        );
-    }
-));
+// adminbookRouter.post('/editBooks/:id',(req,res)=>
+// Bookdata.findByIdAndUpdate( 
+//     req.body.id,{$set:req.body},(err,data)=>{
+//         if (err){res.json({"status":"Failed"});}
+//         else if (data.n==0){
+//             console.log(data);
+//             res.json({"status":"No matches found"});
+//         }
+//         else
+//         Bookdata.find()
+//         .then((data)=>
+//         {res.redirect('/books');}
+//         );
+//     }
+// ));
 
-// //-------------------------DELETE A BOOK --------------------------//
-
-    adminbookRouter.get('/deleteBooks/:id',function(req,res){
-        const id = req.params.id; 
-        const del = Bookdata.findByIdAndDelete(id)
-    
-        del.exec(function(err,data){
-            if(err)throw err;
-            res.redirect('/books');
-        })
-    });
 
 return adminbookRouter
 

@@ -11,12 +11,7 @@ function router()
                 h2: 'Welcome',
                 h3:'To',
                 p:'The Wonderful World of Books',
-                h1:'"THE LIB"',
-            llink:'/login',
-            lname:'LOGIN',
-            slink:'/signup',
-            sname:'New User..Click Here',       
-        
+                h1:'"THE LIB"'
         });
     });
 

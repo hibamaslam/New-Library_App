@@ -15,13 +15,13 @@ const userData = require('../model/userData');
             title:'Sign Up',
             brand:'THE LIB',
             llink:'/login',
-            slink:'/signup',
-            mainlink:'/'
+            slink:'/',
+            mainlink:'/index'
         });
     });
 
 
-    // -----Add New User -------//
+    // -----New User registration-------//
 
     userRouter.post('/add',function(req,res){ // button click --add user to db
       
@@ -33,9 +33,56 @@ const userData = require('../model/userData');
 
        var user = userData(doc);
         user.save();
-        res.redirect('/login');
+        res.redirect('/admin/login');
     });
 
+
+    userRouter.get('/login',function(req,res){
+        res.render('login',
+        {
+            
+            navl:[
+                {name:'Home',link:'#'},
+                {name:'Books',link:'#'},
+                {name:'Authors',link:'#'},
+                {name:'Contact',link:'#'},
+                {name:'Log Out',link:'#'}
+                ],
+                title:'Log In',
+                brand:'THE LIB',
+                hlink:'/home',
+                llink:'/admin/login',
+                slink:'/',
+                mainlink:'/index'
+            });
+        });
+   
+    // -----User validation-------//
+
+    userRouter.post('/login/user',function(req,res){
+        var doc ={
+            user_name:req.body.user_name,   //body for post, query for get
+            user_password:req.body.user_password
+             }
+console.log(doc);
+     userData.findOne(doc,function(err,user){
+           
+            if(!user)
+            {
+                res.redirect('/admin/login');
+                console.log('user does not exist');
+                console.log(doc);
+            }
+            else if(user)
+            {
+                res.redirect('/home');
+                console.log('login successful');
+                console.log(user);
+               
+            }
+        });
+
+    });
 
 module.exports = userRouter; 
     

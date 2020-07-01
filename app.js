@@ -1,5 +1,7 @@
 const express = require('express');
+const bodyparser = require('body-parser');
 const app = new express();
+
 
 const nav=[
     { link:'/home',name:'Home'},
@@ -11,11 +13,14 @@ const nav=[
     { link:'/',name:'LogOut'}
         ];
 
-app.use(express.urlencoded({extended:true})); // for including all data types in post method
+        app.use(bodyparser.json());
+
+app.use(bodyparser.urlencoded({extended:true}));
+
 app.use(express.static('./public'));
+app.use(express.urlencoded({extended:true})); // for including all data types in post method
 
 const indexRouter = require('./src/routes/indexRoutes');
-const loginRouter = require('./src/routes/loginRoutes');
 const userRouter = require('./src/routes/userRoutes');
 const homeRouter = require('./src/routes/homeRoutes')(nav);
 const booksRouter = require('./src/routes/bookRoutes')(nav);
@@ -25,23 +30,16 @@ const contactRouter = require('./src/routes/contactRoutes')(nav);
 const adminbookRouter = require('./src/routes/adminbookRoutes')(nav);
 const adminauthorRouter = require('./src/routes/adminauthorRoutes')(nav);
 
-// const editbookRouter = require('./src/routes/editbookRoutes')(nav);
-// const editauthorRouter = require('./src/routes/editauthorRoutes')(nav);
-
-// const deletebookRouter = require('./src/routes/deletebookRoutes');
-// const deleteauthorRouter = require('./src/routes/deleteauthorRoutes');
-
-
 
 app.use('/index',indexRouter);
 app.use('/home',homeRouter);
 app.use('/contact',contactRouter);
 
-//--------USER------------//
-app.use('/signup',userRouter);
-app.use('/login',loginRouter);
+//--------USER LOGIN/SIGNUP------------//
+app.use('/admin',userRouter);
 
-//-----DISPLAY-----------//
+
+//-----DISPLAY /EDIT/DELETE-----------//
 app.use('/books',booksRouter);
 app.use('/authors',authorRouter);
 
@@ -62,7 +60,7 @@ app.get('/',(req,res)=>{
             h1:'"THE LIB"',
         llink:'/login',
         lname:'LOGIN',
-        slink:'/signup',
+        slink:'/admin',
         sname:'New to "The LIB"..sign up here',
     });
 });
